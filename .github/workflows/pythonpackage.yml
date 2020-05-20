@@ -11,10 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [2.7, 3.4, 3.5, 3.6, 3.7]
+        python-version: [2.7, 3.5, 3.6, 3.7, 3.8]
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: sklearn_keyword_args 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
